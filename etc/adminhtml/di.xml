@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Acesofspades. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Bundle\Ui\DataProvider\Product\Form\Modifier\Composite">
+        <plugin name="add_url_to_name_for_bundle_items"
+                type="Aos\MissingEdit\Plugin\Ui\DataProvider\Product\Form\Modifier\Composite"
+                disabled="false"
+                sortOrder="10"
+        />
+    </type>
+    <type name="Magento\Bundle\Ui\DataProvider\Product\Form\Modifier\BundlePanel">
+        <plugin name="change_bundle_child_name_column"
+                type="Aos\MissingEdit\Plugin\Ui\DataProvider\Product\Form\Modifier\BundlePanel"
+                disabled="false"
+                sortOrder="20"
+        />
+    </type>
+    <type name="Magento\GroupedProduct\Ui\DataProvider\Product\Form\Modifier\Grouped">
+        <plugin name="add_url_to_name_for_grouped_items"
+                type="Aos\MissingEdit\Plugin\Ui\DataProvider\Product\Form\Modifier\Grouped"
+                disabled="false"
+                sortOrder="30"
+        />
+    </type>
+    <type name="Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\Related">
+        <plugin name="add_url_to_name_for_related_items"
+                type="Aos\MissingEdit\Plugin\Ui\DataProvider\Product\Form\Modifier\Related"
+                disabled="false"
+                sortOrder="40"
+        />
+    </type>
+    <type name="Magento\Bundle\Ui\DataProvider\Product\BundleDataProvider">
+        <plugin name="add_url_to_name_for_bundle_products"
+                type="Aos\MissingEdit\Plugin\Ui\DataProvider\Product\BundleDataProvider"
+                disabled="false"
+                sortOrder="50"
+        />
+    </type>
+    <type name="Magento\GroupedProduct\Ui\DataProvider\Product\GroupedProductDataProvider">
+        <plugin name="add_url_to_name_for_grouped_products"
+                type="Aos\MissingEdit\Plugin\Ui\DataProvider\Product\GroupedProductDataProvider"
+                disabled="false"
+                sortOrder="60"
+        />
+    </type>
+    <virtualType name="Magento\Catalog\Ui\DataProvider\Product\Listing\Modifier\Pool">
+        <arguments>
+            <argument name="modifiers" xsi:type="array">
+                <item name="add_url_to_name" xsi:type="array">
+                    <item name="class" xsi:type="string">Aos\MissingEdit\Plugin\Ui\DataProvider\Product\Listing\Modifier\AddUrlToName</item>
+                    <item name="sortOrder" xsi:type="number">100</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Catalog\Ui\DataProvider\Product\ProductDataProvider">
+        <plugin name="add_url_to_name_for_related_products"
+                type="Aos\MissingEdit\Plugin\Ui\DataProvider\Product\ProductDataProvider"
+                disabled="false"
+                sortOrder="70"
+        />
+    </type>
+    <type name="Magento\Catalog\Ui\DataProvider\Product\ProductCustomOptionsDataProvider">
+        <plugin name="add_url_to_name_for_related_products"
+                type="Aos\MissingEdit\Plugin\Ui\DataProvider\Product\ProductCustomOptionsDataProvider"
+                disabled="false"
+                sortOrder="70"
+        />
+    </type>
+</config>
